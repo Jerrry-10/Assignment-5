@@ -58,3 +58,13 @@ colorall.addEventListener("click", ()=>{
         
     }
 })
+whitecolor = document.querySelector(".whitecolor")
+whitecolor.addEventListener("click", ()=>{
+    colors = document.querySelector("#white").value
+    console.log("test")
+    for(let i = 0; i < Boxselecter.length; i++){
+        if(Boxselecter[i].style.backgroundColor == "")
+         Boxselecter[i].style.backgroundColor = colors
+        
+    }
+})
