@@ -23,6 +23,15 @@ addCol.addEventListener("click", () =>{
 const delRow = document.querySelector(".del-row")
 delRow.addEventListener("click", () =>{
     let lastRow = getRow.children.length - 1 
-    getRow.removeChild(getRow.children[lastRow]) // This is a div inside of a div
+    getRow.removeChild(getRow.children[lastRow]) // This deletes the last row
 
+})
+const delCol = document.querySelector(".del-col")
+delCol.addEventListener("click", () =>{
+    NumofChild = getRow.children.length
+    for(let i = 0; NumofChild; i++){
+        let lastCol = getRow.children[NumofChild - 1].children.length - 1
+        let column = getRow.children[i]
+        column.removeChild(column.children[lastCol])
+    }
 })
