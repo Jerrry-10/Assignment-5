@@ -20,3 +20,9 @@ addCol.addEventListener("click", () =>{
     getRow.children[i].appendChild(col) // adds a child to each div
     }
 })
+const delRow = document.querySelector(".del-row")
+delRow.addEventListener("click", () =>{
+    let lastRow = getRow.children.length - 1 
+    getRow.removeChild(getRow.children[lastRow]) // This is a div inside of a div
+
+})
