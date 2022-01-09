@@ -10,6 +10,7 @@ addRow.addEventListener("click", () =>{
         newRow.appendChild(col); // Adds cols to the row
       }
     getRow.appendChild(newRow) // adds the new row
+    ChangeColor() // So that the new row can change colors
 })
 const addCol = document.querySelector(".add-col")
 addCol.addEventListener("click", () =>{
@@ -19,6 +20,7 @@ addCol.addEventListener("click", () =>{
     col.classList.add("col-sm", "border", "border-dark", "box", "white");
     getRow.children[i].appendChild(col) // adds a child to each div
     }
+    ChangeColor() // so that new col can change colors
 })
 const delRow = document.querySelector(".del-row")
 delRow.addEventListener("click", () =>{
@@ -37,10 +39,9 @@ delCol.addEventListener("click", () =>{
 })
 function ChangeColor(){
     Boxselecter = document.querySelectorAll(".box")
-    
-    for(let i = 0; i < Boxselecter.length; i++){
-      
+    for(let i = 0; i < Boxselecter.length; i++){  
         Boxselecter[i].addEventListener("click", () =>{
+            Boxselecter = document.querySelectorAll(".box")
             selected = document.querySelector("#Colorpick").value
             Boxselecter[i].style.backgroundColor = selected
             console.log(selected)
@@ -48,3 +49,12 @@ function ChangeColor(){
     }
 }
 ChangeColor()
+colorall = document.querySelector(".coloringallbutton")
+colorall.addEventListener("click", ()=>{
+    selected = document.querySelector("#coloringall").value
+    boxselect = document.querySelectorAll(".box")
+    for(let i = 0; i <boxselect.length;i++){
+        boxselect[i].style.backgroundColor = selected
+        
+    }
+})
