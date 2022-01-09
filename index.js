@@ -35,3 +35,16 @@ delCol.addEventListener("click", () =>{
         column.removeChild(column.children[lastCol])
     }
 })
+function ChangeColor(){
+    Boxselecter = document.querySelectorAll(".box")
+    
+    for(let i = 0; i < Boxselecter.length; i++){
+      
+        Boxselecter[i].addEventListener("click", () =>{
+            selected = document.querySelector("#Colorpick").value
+            Boxselecter[i].style.backgroundColor = selected
+            console.log(selected)
+        })
+    }
+}
+ChangeColor()
